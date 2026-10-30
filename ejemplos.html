@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <link rel="stylesheet" href="styles.css">
+      <title>Proyecto Final</title>
+
+</head>
+
+<body>
+
+  
+
+<header class="header">
+
+    <div class="encabezado">
+        <img src="img/logo.webp" alt="Logo de mi página" class="logo">
+
+        <div class="nombre-pagina">
+                <h2>MATRIXLAB</h2>
+                <p>ÁLGERBRA LINEAL</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="teoria.html">Fundamentos</a>
+        <a href="operaciones.html">Operaciones</a>
+        <a href="ejemplos.html">Ejemplos</a>
+        <a href="aplicacion.html">Aplicación</a>
+        <a href="conclusiones.html">Conclusiones</a>
+    </nav>
+
+</header>
+
+<main class="ejemplos">
+
+    <!-- EJERCICIO 1 -->
+    <article class="tarjeta">
+        <div class="cabecera">
+            <span class="numero">1</span>
+            <h2>Multiplicación de Matrices</h2>
+            <span class="nivel1">Básico</span>
+        </div>
+
+        <div class="contenido">
+            <h3>Enunciado</h3>
+            <p>Calcule el producto matricial A × B de orden 2x2.</p>
+        </div>
+
+        <div class="contenido">
+            <h3>Datos</h3>
+
+            <div class="matriz-box">
+                <span class="nombre-matriz">A =</span>
+                <div class="matriz corchetes">
+                    <div class="fila"><span>2</span><span>1</span></div>
+                    <div class="fila"><span>3</span><span>4</span></div>
+                </div>
+            </div>
+
+            <div class="matriz-box">
+                <span class="nombre-matriz">B =</span>
+                <div class="matriz corchetes">
+                    <div class="fila"><span>5</span><span>2</span></div>
+                    <div class="fila"><span>1</span><span>6</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenido">
+            <h3>Procedimiento paso a paso</h3>
+            <ol class="pasos">
+                <li><strong>Paso 1:</strong> Multiplicar la fila 1 de A por la columna 1 de B: <code>(2×5) + (1×1) = 11</code></li>
+                <li><strong>Paso 2:</strong> Multiplicar la fila 1 de A por la columna 2 de B: <code>(2×2) + (1×6) = 10</code></li>
+                <li><strong>Paso 3:</strong> Multiplicar la fila 2 de A por la columna 1 de B: <code>(3×5) + (4×1) = 19</code></li>
+                <li><strong>Paso 4:</strong> Multiplicar la fila 2 de A por la columna 2 de B: <code>(3×2) + (4×6) = 30</code></li>
+            </ol>
+        </div>
+
+        <div class="resultado">
+            <h3>Respuesta final</h3>
+            <div class="matriz-box">
+                <span class="nombre-matriz">C =</span>
+                <div class="matriz corchetes">
+                    <div class="fila"><span>11</span><span>10</span></div>
+                    <div class="fila"><span>19</span><span>30</span></div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- EJERCICIO 2 -->
+    <article class="tarjeta">
+        <div class="cabecera">
+            <span class="numero">2</span>
+            <h2>Sistemas de Ecuaciones</h2>
+            <span class="nivel2">Intermedio</span>
+        </div>
+
+        <div class="contenido">
+            <h3>Enunciado</h3>
+            <p>Resuelva el sistema por el método de Gauss-Jordan:</p>
+
+            <ul class="ecuaciones">
+                <li>x + y + z = 6</li>
+                <li>2x - y + 3z = 14</li>
+                <li>x + 2y - z = 2</li>
+            </ul>
+        </div>
+
+        <div class="contenido">
+            <h3>Procedimiento resumido</h3>
+            <ol class="pasos">
+                <li><strong>Paso 1:</strong> Plantear la matriz aumentada inicial de 3x4.</li>
+                <li><strong>Paso 2:</strong> Aplicar operaciones elementales por filas para hacer ceros abajo del pivote.</li>
+                <li><strong>Paso 3:</strong> Reducir hasta obtener la matriz identidad en el lado izquierdo.</li>
+            </ol>
+        </div>
+
+        <div class="resultado">
+            <h3>Respuesta final</h3>
+            <p class="respuesta">x = 1, y = 2, z = 3</p>
+        </div>
+    </article>
+
+    <!-- EJERCICIO 3 -->
+    <article class="tarjeta">
+        <div class="cabecera">
+            <span class="numero">3</span>
+            <h2>Modelo de Leontief</h2>
+            <span class="nivel3">Avanzado</span>
+        </div>
+
+        <div class="contenido">
+            <h3>Enunciado</h3>
+            <p>Determine el nivel de producción total X en una economía de dos sectores interdependientes (Agricultura e Industria), conociendo su matriz de insumos y su demanda final.</p>
+        </div>
+
+        <div class="contenido">
+            <h3>Datos</h3>
+
+            <div class="matriz-box">
+                <span class="nombre-matriz">Matriz A =</span>
+                <div class="matriz corchetes">
+                    <div class="fila"><span>0.2</span><span>0.3</span></div>
+                    <div class="fila"><span>0.4</span><span>0.1</span></div>
+                </div>
+            </div>
+
+            <div class="matriz-box">
+                <span class="nombre-matriz">Demanda D =</span>
+                <div class="matriz corchetes">
+                    <div class="fila"><span>50</span></div>
+                    <div class="fila"><span>80</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenido">
+            <h3>Procedimiento paso a paso</h3>
+
+            <ol class="pasos">
+                <li>
+                    <strong>Paso 1: Plantear la ecuación fundamental</strong>
+                    <p>La fórmula de Leontief es (I - A)X = D, donde I es la matriz identidad de orden 2x2.</p>
+                </li>
+
+                <li>
+                    <strong>Paso 2: Calcular la matriz neta (I - A)</strong>
+                    <p>A la matriz identidad se le resta la matriz A:</p>
+
+                    <div class="matriz-box">
+                        <div class="matriz corchetes">
+                            <div class="fila"><span>1</span><span>0</span></div>
+                            <div class="fila"><span>0</span><span>1</span></div>
+                        </div>
+                        <span>-</span>
+                        <div class="matriz corchetes">
+                            <div class="fila"><span>0.2</span><span>0.3</span></div>
+                            <div class="fila"><span>0.4</span><span>0.1</span></div>
+                        </div>
+                        <span>=</span>
+                        <div class="matriz corchetes">
+                            <div class="fila"><span>0.8</span><span>-0.3</span></div>
+                            <div class="fila"><span>-0.4</span><span>0.9</span></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <strong>Paso 3: Obtener la matriz inversa (I - A)⁻¹</strong>
+                    <p>Se calcula el determinante: (0.8 × 0.9) - (-0.3 × -0.4) = 0.72 - 0.12 = 0.60.</p>
+                    <p>Aplicando la fórmula de la inversa, dividimos cada elemento entre el determinante (0.60):</p>
+
+                    <div class="matriz-box">
+                        <div class="matriz corchetes">
+                            <div class="fila"><span>1.50</span><span>0.50</span></div>
+                            <div class="fila"><span>0.67</span><span>1.33</span></div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <strong>Paso 4: Multiplicar la inversa por la demanda D</strong>
+                    <p>Se multiplica la matriz inversa por el vector de demanda para hallar la producción total:</p>
+                    <p><strong>Sector 1 (Agricultura):</strong> (1.50 × 50) + (0.50 × 80) = 115</p>
+                    <p><strong>Sector 2 (Industria):</strong> (0.67 × 50) + (1.33 × 80) ≈ 140</p>
+                </li>
+            </ol>
+        </div>
+
+        <div class="resultado">
+            <h3>Respuesta final</h3>
+            <p>El vector de producción total requerido es:</p>
+
+            <div class="matriz-box">
+                <span class="nombre-matriz">X =</span>
+                <div class="matriz corchetes">
+                    <div class="fila"><span>115.00</span></div>
+                    <div class="fila"><span>140.00</span></div>
+                </div>
+            </div>
+
+            <p><em>Interpretación:</em> La agricultura debe producir 115 millones y la industria 140 millones para satisfacer la demanda final.</p>
+        </div>
+    </article>
+
+    <!--Quien hizo este contenido-->
+<section class="quien">
+    <div class="perfil-icono">
+        <span>Ejemplos de matrices</span>
+    </div>
+
+    <h3>Desarrollado por</h3>
+    <h2>Pedro Andrés Navarro Mérida</h2>
+
+    <p class="carnet">Carné: 0903-26-12272</p>
+
+    <span class="rol">Desarrollador de MatrixLab</span>
+
+    <div class="contribucion">
+        <h4>Contribución al proyecto</h4>
+        <p>
+            Se encargó de elaborar ejemplos prácticos relacionados con los temas estudiados,
+            mostrando paso a paso cómo aplicar los conceptos y procedimientos del álgebra lineal.
+        </p>
+    </div>
+</section>
+
+
+</main>
+
+
+<!--Pie de pagina xd-->
+<footer class="footer">
+
+    <div class="footer-superior">
+
+        <div class="footer-marca">
+            <img src="img/logo.webp"
+                 alt="Logo de la página"
+                 class="logo2">
+
+            <div>
+                <h2>Matrices</h2>
+                <p>Ingeniería en Sistemas</p>
+                
+            </div>
+        </div>
+
+      <div class="footer-integrantes">
+    <h3>Integrantes del proyecto</h3>
+    <p>Milhen Josué Fuentes Velásquez </p>
+    <p>Melissa Alexia Bautista Miranda </p>
+    <p>Francisco Javier González Velásquez</p>
+    <p>Pedro Andrés Navarro Merida </p>
+    <p>Diana Fernanda Barrios Ramirez</p>
+    <p>Janeth Darlyne Orozco de León    </p>
+</div>
+
+        <div class="footer-enlaces">
+            <h3>Explora la página</h3>
+            <a href="index.html" aria-current="page">Inicio</a>
+            <a href="teoria.html">Fundamentos</a>
+            <a href="operaciones.html">Operaciones</a>
+            <a href="ejemplos.html">Ejemplos</a>
+            <a href="aplicacion.html">Aplicación</a>
+            <a href="conclusiones.html">Conclusiones</a>
+        </div>
+
+    </div>
+
+    <div class="footer-frase">
+        <p>
+            Las Matemáticas detras de la Tecnología
+        </p>
+    </div>
+
+    <div class="footer-inferior">
+        <p>INGENIERÍA EN SISTEMAS · ÁLGEBRA LINEAL · 2026</p>
+    </div>
+
+</footer>
+
+
+</body>
+</html>
