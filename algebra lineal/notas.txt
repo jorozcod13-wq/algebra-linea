@@ -1,0 +1,55 @@
+ <!-- SECCIÓN 6 -->
+        <section class="card">
+            <h2>6. Conclusión</h2>
+
+            <p>
+                Las matrices son esenciales en Ingeniería en Sistemas porque
+                permiten representar imágenes como datos numéricos y aplicar
+                operaciones para modificarlas. En este ejercicio, al sumar
+                40 a cada elemento de una matriz de 3 × 3, se obtuvo una
+                imagen más clara. Esto demuestra cómo las matemáticas se
+                utilizan en programas de edición, vigilancia y procesamiento
+                de imágenes.
+            </p>
+        </section>
+
+
+        <!-- SECCIÓN 7 -->
+        <section class="card">
+            <h2>7. Fuentes confiables</h2>
+
+            <ul>
+                <li>
+                    <strong>OpenCV:</strong>
+                    <a
+                        href="https://docs.opencv.org/4.x/d3/dc1/tutorial_basic_linear_transform.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Basic Linear Transforms — brillo y contraste
+                    </a>.
+                </li>
+
+                <li>
+                    <strong>Scikit-image:</strong>
+                    <a
+                        href="https://scikit-image.org/skimage-tutorials/lectures/00_images_are_arrays.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Images are NumPy Arrays — imágenes como matrices
+                    </a>.
+                </li>
+
+                <li>
+                    <strong>Scikit-image:</strong>
+                    <a
+                        href="https://scikit-image.org/docs/stable/user_guide/data_types.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Image Data Types and What They Mean — rangos de píxeles
+                    </a>.
+                </li>
+            </ul>
+        </section>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+      <title>Proyecto Final</title>
+
+
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- MathJax -->
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+    },
+    options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</head>
+
+<body>
+
+  
+
+<header class="header">
+
+    <div class="encabezado">
+        <img src="img/logo.webp" alt="Logo de mi página" class="logo">
+
+        <div class="nombre-pagina">
+                <h2>MATRIXLAB</h2>
+                <p>ÁLGERBRA LINEAL</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="teoria.html">Fundamentos</a>
+        <a href="operaciones.html">Operaciones</a>
+        <a href="ejemplos.html">Ejemplos</a>
+        <a href="aplicacion.html">Aplicación</a>
+        <a href="conclusiones.html">Conclusiones</a>
+    </nav>
+
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+        <!-- 1. SUMA Y RESTA DE MATRICES -->
+        <section id="suma-resta" class="scroll-mt-24 space-y-6">
+            <div class="border-l-4 border-slateBlue pl-4">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-richBlack">1. Suma y Resta de Matrices</h2>
+                <p class="text-slate-600 text-sm mt-1">Adición y sustracción elemento a elemento en dimensiones equivalentes.</p>
+            </div>
+
+            
+            <div class="bg-columbiaBlue/40 border border-periwinkle rounded-2xl p-6 flex items-start space-x-4">
+                <div class="text-slateBlue text-2xl mt-1"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div>
+                    <h3 class="font-bold text-richBlack text-base">Condición Necesaria de Dimensión:</h3>
+                    <p class="text-richBlack/90 text-sm mt-1">
+                        Dos matrices \(A\) y \(B\) se pueden sumar o restar <strong>única y exclusivamente si tienen exactamente las mismas dimensiones</strong> (\(m \times n\)). El resultado será una matriz \(C\) de esa misma dimensión \(m \times n\).
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-periwinkle/50 shadow-sm space-y-3">
+                    <h3 class="font-bold text-lg text-richBlack">Procedimiento Algebraico</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Se suman o restan los elementos que ocupan la <strong>misma posición</strong> en ambas matrices:
+                    </p>
+                    <div class="p-4 bg-columbiaBlue/30 rounded-xl text-center overflow-x-auto text-sm font-mono border border-columbiaBlue">
+                        \[ C_{ij} = A_{ij} \pm B_{ij} \]
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-periwinkle/50 shadow-sm space-y-3">
+                    <h3 class="font-bold text-lg text-richBlack">Propiedades Principales</h3>
+                    <ul class="text-slate-600 text-sm space-y-2 list-disc list-inside">
+                        <li><strong>Conmutativa:</strong> \(A + B = B + A\)</li>
+                        <li><strong>Asociativa:</strong> \((A + B) + C = A + (B + C)\)</li>
+                        <li><strong>Elemento Neutro:</strong> \(A + 0 = A\) (matriz nula)</li>
+                        <li><strong>No conmutativa en resta:</strong> \(A - B \neq B - A\)</li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            <div class="bg-white p-6 rounded-2xl border border-periwinkle/50 shadow-sm space-y-4">
+                <h3 class="font-bold text-lg text-richBlack border-b border-columbiaBlue pb-2"><i class="fa-solid fa-list-check text-slateBlue mr-2"></i>Ejemplo Resuelto Paso a Paso</h3>
+                <p class="text-slate-600 text-sm">Dadas las matrices \(A\) y \(B\) de orden \(2 \times 2\), calcular \(A + B\):</p>
+
+                <div class="flex flex-wrap items-center justify-center gap-4 text-base py-2">
+                    <div>\[ A = \begin{pmatrix} 3 & -1 \\ 2 & 5 \end{pmatrix} \]</div>
+                    <div>\[ B = \begin{pmatrix} 4 & 7 \\ -3 & 1 \end{pmatrix} \]</div>
+                </div>
+
+                <div class="bg-columbiaBlue/20 p-4 rounded-xl space-y-2 border border-columbiaBlue text-sm">
+                    <p class="font-bold text-richBlack">Procedimiento:</p>
+                    <div class="overflow-x-auto">
+                        \[ 
+                        A + B = \begin{pmatrix} 
+                        3 + 4 & -1 + 7 \\ 
+                        2 + (-3) & 5 + 1 
+                        \end{pmatrix} 
+                        = \begin{pmatrix} 
+                        7 & 6 \\ 
+                        -1 & 6 
+                        \end{pmatrix}
+                        \]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="escalar" class="scroll-mt-24 space-y-6">
+            <div class="border-l-4 border-slateBlue pl-4">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-richBlack">2. Multiplicación de una Matriz por un Escalar</h2>
+                <p class="text-slate-600 text-sm mt-1">Escalado homogéneo de cada entrada por un número real \(k\).</p>
+            </div>
+
+            <div class="bg-celadon/40 border border-celadon/80 rounded-2xl p-6 flex items-start space-x-4">
+                <div class="text-slateBlue text-2xl mt-1"><i class="fa-solid fa-circle-info"></i></div>
+                <div>
+                    <h3 class="font-bold text-richBlack text-base">Condición Necesaria:</h3>
+                    <p class="text-richBlack/90 text-sm mt-1">
+                        <strong>No requiere restricciones de dimensión.</strong> Se puede aplicar a cualquier matriz de orden \(m \times n\) multiplicada por cualquier escalar real \(k \in \mathbb{R}\). La matriz resultante conserva las dimensiones originales \(m \times n\).
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-periwinkle/50 shadow-sm space-y-3">
+                    <h3 class="font-bold text-lg text-richBlack">Fórmula General</h3>
+                    <p class="text-slate-600 text-sm">
+                        Cada entrada de la matriz \(A\) se multiplica por la constante \(k\):
+                    </p>
+                    <div class="p-4 bg-columbiaBlue/30 rounded-xl text-center font-mono text-sm overflow-x-auto border border-columbiaBlue">
+                        \[ k \cdot A = \begin{pmatrix} k \cdot a_{11} & k \cdot a_{12} \\ k \cdot a_{21} & k \cdot a_{22} \end{pmatrix} \]
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-periwinkle/50 shadow-sm space-y-3">
+                    <h3 class="font-bold text-lg text-richBlack">Ejemplo Resuelto (\(k = -2\))</h3>
+                    <p class="text-slate-600 text-sm">Sea \(A = \begin{pmatrix} 2 & -4 \\ 0 & 3 \end{pmatrix}\), calcular \(-2A\):</p>
+                    <div class="p-4 bg-columbiaBlue/20 rounded-xl border border-columbiaBlue text-sm overflow-x-auto">
+                        \[ 
+                        -2A = \begin{pmatrix} 
+                        -2(2) & -2(-4) \\ 
+                        -2(0) & -2(3) 
+                        \end{pmatrix} 
+                        = \begin{pmatrix} 
+                        -4 & 8 \\ 
+                        0 & -6 
+                        \end{pmatrix}
+                        \]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="multiplicacion" class="scroll-mt-24 space-y-6">
+            <div class="border-l-4 border-slateBlue pl-4">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-richBlack">3. Multiplicación entre Matrices</h2>
+                <p class="text-slate-600 text-sm mt-1">Producto interno de filas por columnas.</p>
+            </div>
+
+          
+            <div class="bg-periwinkle/30 border border-periwinkle rounded-2xl p-6 flex items-start space-x-4 shadow-sm">
+                <div class="text-slateBlue text-2xl mt-1"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div>
+                    <h3 class="font-bold text-richBlack text-base">Condición Crítica de Compatibilidad:</h3>
+                    <p class="text-richBlack/90 text-sm mt-1">
+                        El producto \(A \cdot B\) se puede realizar <strong>únicamente si el número de columnas de \(A\) es IGUAL al número de filas de \(B\)</strong>.
+                    </p>
+                    <div class="mt-3 p-3 bg-white/80 rounded-xl font-mono text-xs sm:text-sm text-center border border-periwinkle/60">
+                        \[ A_{(m \times \mathbf{n})} \cdot B_{(\mathbf{n} \times p)} = C_{(m \times p)} \]
+                    </div>
+                </div>
+            </div>
+
+  
+            <div class="bg-white p-6 rounded-2xl border border-periwinkle/50 shadow-sm space-y-4">
+                <h3 class="font-bold text-lg text-richBlack">Regla Fila \(\times\) Columna</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    La entrada \(c_{ij}\) de la matriz resultante \(C\) se obtiene multiplicando elemento a elemento la <strong>fila \(i\) de la matriz \(A\)</strong> por la <strong>columna \(j\) de la matriz \(B\)</strong> y sumando los productos:
+                </p>
+                <div class="p-4 bg-columbiaBlue/30 rounded-xl text-center font-mono text-sm overflow-x-auto border border-columbiaBlue">
+                    \[ c_{ij} = \sum_{k=1}^{n} a_{ik} \cdot b_{kj} = a_{i1}b_{1j} + a_{i2}b_{2j} + \dots + a_{in}b_{nj} \]
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl border border-periwinkle/50 shadow-sm space-y-4">
+                <h3 class="font-bold text-lg text-richBlack border-b border-columbiaBlue pb-2"><i class="fa-solid fa-list-check text-slateBlue mr-2"></i>Ejemplo Resuelto Paso a Paso (\(2 \times 2\))</h3>
+                
+                <p class="text-slate-600 text-sm">Sean \(A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\) y \(B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}\):</p>
+
+                <div class="space-y-3 bg-columbiaBlue/20 p-4 rounded-xl border border-columbiaBlue text-sm">
+                    <div>
+                        <span class="font-bold text-slateBlue">Paso 1 (Fila 1 x Columna 1):</span>
+                        <div class="overflow-x-auto">\[ c_{11} = (1)(5) + (2)(7) = 5 + 14 = 19 \]</div>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slateBlue">Paso 2 (Fila 1 x Columna 2):</span>
+                        <div class="overflow-x-auto">\[ c_{12} = (1)(6) + (2)(8) = 6 + 16 = 22 \]</div>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slateBlue">Paso 3 (Fila 2 x Columna 1):</span>
+                        <div class="overflow-x-auto">\[ c_{21} = (3)(5) + (4)(7) = 15 + 28 = 43 \]</div>
+                    </div>
+                    <div>
+                        <span class="font-bold text-slateBlue">Paso 4 (Fila 2 x Columna 2):</span>
+                        <div class="overflow-x-auto">\[ c_{22} = (3)(6) + (4)(8) = 18 + 32 = 50 \]</div>
+                    </div>
+                    <div class="pt-2 border-t border-periwinkle/50 font-bold text-center">
+                        \[ C = A \cdot B = \begin{pmatrix} 19 & 22 \\ 43 & 50 \end{pmatrix} \]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="errores" class="scroll-mt-24 space-y-6">
+            <div class="border-l-4 border-slateBlue pl-4">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-richBlack">4. Errores Comunes que Deben Evitarse</h2>
+                <p class="text-slate-600 text-sm mt-1">Alertas críticas para no cometer fallos conceptuales en exámenes o proyectos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="bg-columbiaBlue/30 border border-periwinkle rounded-2xl p-6 space-y-2">
+                    <div class="flex items-center space-x-2 text-slateBlue font-bold">
+                        <i class="fa-solid fa-circle-xmark text-xl"></i>
+                        <h3>1. Asumir Conmutatividad (\(A \cdot B \neq B \cdot A\))</h3>
+                    </div>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        En general, el producto de matrices <strong>NO es conmutativo</strong>. El orden de los factores altera por completo el resultado e incluso puede hacer que la operación sea imposible por dimensiones.
+                    </p>
+                </div>
+
+        
+                <div class="bg-columbiaBlue/30 border border-periwinkle rounded-2xl p-6 space-y-2">
+                    <div class="flex items-center space-x-2 text-slateBlue font-bold">
+                        <i class="fa-solid fa-circle-xmark text-xl"></i>
+                        <h3>2. Multiplicar Elemento a Elemento en Producto</h3>
+                    </div>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        Un error típico es calcular \(c_{ij} = a_{ij} \cdot b_{ij}\). El producto matricial exige la suma del producto de la fila completa por la columna completa.
+                    </p>
+                </div>
+
+                
+                <div class="bg-columbiaBlue/30 border border-periwinkle rounded-2xl p-6 space-y-2">
+                    <div class="flex items-center space-x-2 text-slateBlue font-bold">
+                        <i class="fa-solid fa-circle-xmark text-xl"></i>
+                        <h3>3. Sumar Matrices de Distintas Dimensiones</h3>
+                    </div>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        Intentar sumar una matriz \(2 \times 3\) con una \(3 \times 2\) es un error grave. La adición exige coincidencia exacta de orden.
+                    </p>
+                </div>
+
+            
+                <div class="bg-columbiaBlue/30 border border-periwinkle rounded-2xl p-6 space-y-2">
+                    <div class="flex items-center space-x-2 text-slateBlue font-bold">
+                        <i class="fa-solid fa-circle-xmark text-xl"></i>
+                        <h3>4. Errores con Signos Negativos</h3>
+                    </div>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        Olvidar distribuir el signo negativo a todos los elementos al restar matrices o al multiplicar por un escalar negativo como \(-1A\).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="calculadora" class="scroll-mt-24 space-y-6">
+            <div class="border-l-4 border-celadon pl-4">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-richBlack"><i class="fa-solid fa-calculator text-slateBlue mr-2"></i>Simulador Interactivo con Procedimiento</h2>
+                <p class="text-slate-600 text-sm mt-1">Ingresa tus matrices \(2 \times 2\) para generar el resultado y el paso a paso matemático.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-periwinkle/50 shadow-lg p-6 space-y-6">
+             
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                    <div class="space-y-3 bg-columbiaBlue/20 p-4 rounded-xl border border-columbiaBlue">
+                        <h3 class="font-bold text-richBlack text-center text-sm">Matriz A (2x2)</h3>
+                        <div class="grid grid-cols-2 gap-2 max-w-[200px] mx-auto">
+                            <input type="number" id="a11" value="3" class="p-2 border border-periwinkle rounded text-center font-semibold focus:outline-none focus:ring-2 focus:ring-slateBlue">
+                            <input type="number" id="a12" value="-1" class="p-2 border border-periwinkle rounded text-center font-semibold focus:outline-none focus:ring-2 focus:ring-slateBlue">
+                            <input type="number" id="a21" value="2" class="p-2 border border-periwinkle rounded text-center font-semibold focus:outline-none focus:ring-2 focus:ring-slateBlue">
+                            <input type="number" id="a22" value="5" class="p-2 border border-periwinkle rounded text-center font-semibold focus:outline-none focus:ring-2 focus:ring-slateBlue">
+                        </div>
+                    </div>
+
+          
+                    <div class="space-y-3 bg-columbiaBlue/20 p-4 rounded-xl border border-columbiaBlue">
+                        <h3 class="font-bold text-richBlack text-center text-sm">Matriz B (2x2)</h3>
+                        <div class="grid grid-cols-2 gap-2 max-w-[200px] mx-auto">
+                            <input type="number" id="b11" value="4" class="p-2 border border-periwinkle rounded text-center font-semibold focus:outline-none focus:ring-2 focus:ring-slateBlue">
+                            <input type="number" id="b12" value="7" class="p-2 border border-periwinkle rounded text-center font-semibold focus:outline-none focus:ring-2 focus:ring-slateBlue">
+                            <input type="number" id="b21" value="-3" class="p-2 border border-periwinkle rounded text-center font-semibold focus:outline-none focus:ring-2 focus:ring-slateBlue">
+                            <input type="number" id="b22" value="1" class="p-2 border border-periwinkle rounded text-center font-semibold focus:outline-none focus:ring-2 focus:ring-slateBlue">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3 justify-center">
+                    <button onclick="calcularSuma()" class="bg-slateBlue hover:opacity-90 text-white font-bold px-5 py-2.5 rounded-xl shadow text-sm transition-all">
+                        Calcular A + B
+                    </button>
+                    <button onclick="calcularResta()" class="bg-richBlack hover:bg-richBlack/90 text-columbiaBlue font-bold px-5 py-2.5 rounded-xl shadow text-sm transition-all">
+                        Calcular A - B
+                    </button>
+                    <button onclick="calcularProducto()" class="bg-celadon hover:opacity-90 text-richBlack font-bold px-5 py-2.5 rounded-xl shadow text-sm transition-all border border-celadon">
+                        Calcular A · B
+                    </button>
+                </div>
+
+                <div id="resultado-container" class="hidden bg-richBlack text-white p-6 rounded-2xl space-y-4 border border-periwinkle/30">
+                    <h3 id="res-titulo" class="font-bold text-periwinkle text-base border-b border-slateBlue/30 pb-2">Procedimiento Generado:</h3>
+                    <div id="res-pasos" class="text-sm space-y-2 text-columbiaBlue font-mono overflow-x-auto"></div>
+                </div>
+            </div>
+        </section>
+
+      <!--Quien hizo este contenido-->
+<section class="quien">
+    <div class="perfil-icono">
+        <span>Operaciones de matrices</span>
+    </div>
+
+    <h3>Desarrollado por</h3>
+    <h2>Francisco Javier González Velásquez </h2>
+
+    <p class="carnet">Carné: 0903-26-3434  </p>
+
+    <span class="rol">Desarrollador de MatrixLab</span>
+
+    <div class="contribucion">
+        <h4>Contribución al proyecto</h4>
+        <p>
+            Se encargó de desarrollar y explicar las principales operaciones con matrices, 
+            incluyendo sus procedimientos y ejemplos para facilitar la comprensión de los cálculos y sus aplicaciones.
+        </p>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+
+    <div class="footer-superior">
+
+        <div class="footer-marca">
+            <img src="img/logo.webp"
+                 alt="Logo de la página"
+                 class="logo2">
+
+            <div>
+                <h2>Matrices</h2>
+                <p>Ingeniería en Sistemas</p>
+                
+            </div>
+        </div>
+
+      <div class="footer-integrantes">
+    <h3>Integrantes del proyecto</h3>
+    <p>Milhen Josué Fuentes Velásquez </p>
+    <p>Melissa Alexia Bautista Miranda </p>
+    <p>Francisco Javier González Velásquez </p>
+    <p>Pedro Andrés Navarro Merida </p>
+    <p>Diana Fernanda Barrios Ramirez</p>
+    <p>Janeth Darlyne Orozco de León    </p>
+</div>
+
+        <div class="footer-enlaces">
+            <h3>Explora la página</h3>
+            <a href="index.html" aria-current="page">Inicio</a>
+            <a href="teoria.html">Fundamentos</a>
+            <a href="operaciones.html">Operaciones</a>
+            <a href="ejemplos.html">Ejemplos</a>
+            <a href="aplicacion.html">Aplicación</a>
+            <a href="conclusiones.html">Conclusiones</a>
+        </div>
+
+    </div>
+
+    <div class="footer-frase">
+        <p>
+            Las Matemáticas detras de la Tecnología
+        </p>
+    </div>
+
+    <div class="footer-inferior">
+        <p>INGENIERÍA EN SISTEMAS · ÁLGEBRA LINEAL · 2026</p>
+    </div>
+
+</footer>
+
+
+</body>
+</html>

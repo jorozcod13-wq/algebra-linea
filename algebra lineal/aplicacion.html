@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+      <title>Proyecto Final</title>
+
+</head>
+
+<body>
+
+  
+
+<header class="header">
+
+    <div class="encabezado">
+        <img src="img/logo.webp" alt="Logo de mi página" class="logo">
+
+        <div class="nombre-pagina">
+                <h2>MATRIXLAB</h2>
+                <p>ÁLGERBRA LINEAL</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="teoria.html">Fundamentos</a>
+        <a href="operaciones.html">Operaciones</a>
+        <a href="ejemplos.html">Ejemplos</a>
+        <a href="aplicacion.html">Aplicación</a>
+        <a href="conclusiones.html">Conclusiones</a>
+    </nav>
+
+</header>
+
+  <main>
+
+        <!-- INTRODUCCIÓN -->
+        <section class="aplicacion-intro">
+            <span class="etiqueta">
+                APLICACIÓN PRÁCTICA · INGENIERÍA EN SISTEMAS
+            </span>
+
+            <h1>
+                Aplicación de las matrices en el procesamiento de imágenes digitales
+            </h1>
+
+            <p>
+                Descubre cómo las matrices permiten representar,
+                almacenar y transformar imágenes mediante operaciones matemáticas.
+            </p>
+        </section>
+
+
+        <!-- SECCIÓN 1 -->
+        <section class="card">
+            <h2>1. ¿Cómo se utilizan las matrices en las imágenes digitales?</h2>
+
+            <p>
+                En Ingeniería en Sistemas, las matrices permiten representar,
+                almacenar y modificar imágenes digitales. Una imagen está
+                formada por pequeños puntos llamados <strong>píxeles</strong>,
+                que se organizan en filas y columnas.
+            </p>
+
+            <p>
+                Gracias a las matrices, un programa puede aumentar o disminuir
+                el brillo, ajustar el contraste, aplicar filtros, detectar
+                bordes y preparar imágenes para sistemas de reconocimiento.
+            </p>
+
+            <p>
+                <strong>Ejemplo:</strong> al aumentar el brillo de una fotografía
+                desde un teléfono, el software puede modificar numéricamente
+                la intensidad de sus píxeles.
+            </p>
+        </section>
+
+
+        <!-- SECCIÓN 2 -->
+        <section class="card">
+            <h2>2. Imagen en escala de grises como matriz</h2>
+
+            <p>
+                En una imagen en escala de grises de 8 bits, cada píxel tiene
+                un valor entre <strong>0 y 255</strong>. El 0 representa negro,
+                el 255 blanco y los valores intermedios diferentes grises.
+            </p>
+
+            <div class="scale">
+                <div class="swatch" style="background: #000; color: white;">
+                    0 · Negro
+                </div>
+
+                <div class="swatch" style="background: #808080; color: white;">
+                    128 · Gris
+                </div>
+
+                <div class="swatch" style="background: #fff; border: 1px solid #ddd;">
+                    255 · Blanco
+                </div>
+            </div>
+
+            <p>
+                Ejemplo: una imagen de 3 filas y 3 columnas puede representarse
+                con esta matriz:
+            </p>
+
+            <div class="formula">
+                A = [ [50, 100, 150], [80, 120, 180], [30, 90, 200] ]
+            </div>
+
+            <div class="matrices">
+                <div class="matrix-block">
+                    <h3>Imagen original</h3>
+                    <div class="pixels" id="original"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN 3 -->
+        <section class="card">
+            <h2>3. Problema práctico: aumentar el brillo</h2>
+
+            <p>
+                <strong>Problema:</strong> un estudiante desarrolla un programa
+                para editar fotografías y necesita aclarar una imagen oscura.
+                Para ello, aumentará <strong>40 unidades</strong> la intensidad
+                de cada píxel de la matriz original.
+            </p>
+
+            <h3>Paso 1. Matriz original</h3>
+
+            <div class="matrix-text">
+                ⎡  50  100  150 ⎤
+                <br>
+                ⎢  80  120  180 ⎥
+                <br>
+                ⎣  30   90  200 ⎦
+            </div>
+
+            <h3>Paso 2. Operación</h3>
+
+            <div class="formula">
+                B[i,j] = min(255, A[i,j] + 40)
+            </div>
+
+            <p>
+                Se suma 40 a cada elemento. La función
+                <strong>min(255, ...)</strong> impide superar el máximo
+                permitido para píxeles de 8 bits.
+            </p>
+
+            <div class="matrix-text">
+                ⎡  50+40  100+40  150+40 ⎤
+                <br>
+                ⎢  80+40  120+40  180+40 ⎥
+                <br>
+                ⎣  30+40   90+40  200+40 ⎦
+            </div>
+
+            <h3>Paso 3. Matriz resultante</h3>
+
+            <div class="matrix-text">
+                ⎡  90  140  190 ⎤
+                <br>
+                ⎢ 120  160  220 ⎥
+                <br>
+                ⎣  70  130  240 ⎦
+            </div>
+
+            <p>
+                <strong>Resultado:</strong> todos los píxeles son más claros.
+                Ninguno supera 255 en este ejemplo.
+            </p>
+        </section>
+
+
+        <!-- SECCIÓN 4 -->
+        <section class="card">
+            <h2>4. Comparación visual: antes y después</h2>
+
+            <div class="comparison">
+
+                <div class="matrix-block">
+                    <h3>Antes</h3>
+                    <div class="pixels" id="before"></div>
+                </div>
+
+                <div class="matrix-block">
+                    <h3>Después (+40)</h3>
+                    <div class="pixels" id="after"></div>
+                </div>
+
+            </div>
+
+            <p>
+                Los números indican la intensidad de cada píxel.
+                Los cuadros más claros tienen valores más altos.
+            </p>
+        </section>
+
+
+        <!-- SIMULADOR INTERACTIVO -->
+        <section class="card">
+            <h2>Prueba interactiva: cambia el brillo</h2>
+
+            <p>
+                Desliza el control para ver cómo cambian los valores de la matriz.
+                Los resultados se limitan al intervalo de 0 a 255.
+            </p>
+
+            <div class="controls">
+
+                <label for="brightness">
+                    <strong>
+                        Ajuste:
+                        <span id="amount">+40</span>
+                    </strong>
+                </label>
+
+                <input
+                    id="brightness"
+                    type="range"
+                    min="-100"
+                    max="100"
+                    step="10"
+                    value="40"
+                >
+
+                <div class="matrix-block">
+                    <h3>Imagen modificada</h3>
+
+                    <div class="pixels" id="interactive"></div>
+
+                    <div
+                        id="resultText"
+                        class="matrix-text"
+                        aria-live="polite"
+                    ></div>
+                </div>
+
+                <p style="text-align: center;">
+                    <button id="reset" type="button">
+                        Restablecer a +40
+                    </button>
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- SECCIÓN 5 -->
+        <section class="card">
+            <h2>5. Utilidad en Ingeniería en Sistemas y limitaciones</h2>
+
+            <h3>¿Para qué sirve?</h3>
+
+            <ul>
+                <li>
+                    <strong>Edición de fotografías:</strong>
+                    permite aclarar imágenes oscuras.
+                </li>
+
+                <li>
+                    <strong>Seguridad:</strong>
+                    facilita la visualización de grabaciones con poca luz,
+                    si existen detalles capturados.
+                </li>
+
+                <li>
+                    <strong>Imágenes médicas:</strong>
+                    permite ajustar la visualización, sin crear información nueva.
+                </li>
+
+                <li>
+                    <strong>Visión artificial:</strong>
+                    puede formar parte del preprocesamiento de imágenes.
+                </li>
+            </ul>
+
+            <h3>Limitaciones</h3>
+
+            <ul>
+                <li>
+                    <strong>Saturación:</strong>
+                    los valores que superarían 255 se limitan a 255
+                    y se pierden diferencias entre píxeles claros.
+                </li>
+
+                <li>
+                    <strong>Ruido:</strong>
+                    aclarar una imagen también puede hacer más visibles
+                    sus imperfecciones.
+                </li>
+
+                <li>
+                    <strong>Información perdida:</strong>
+                    aumentar el brillo no recupera detalles que la cámara
+                    nunca captó.
+                </li>
+
+                <li>
+                    <strong>Calidad:</strong>
+                    sumar una constante no mejora por sí solo el contraste
+                    ni corrige todas las condiciones de iluminación.
+                </li>
+            </ul>
+
+            <div class="note">
+                <strong>Ejemplo del límite:</strong>
+                si un píxel vale 230 y sumamos 40, obtenemos 270.
+                Como el máximo es 255, el programa guarda 255.
+            </div>
+        </section>
+
+   <!--Quien hizo este contenido-->
+<section class="quien">
+    <div class="perfil-icono">
+        <span>aplicacion en Ingeniería en Sistemas</span>
+    </div>
+
+    <h3>Desarrollado por</h3>
+    <h2>Diana Fernanda Barrios Ramirez</h2>
+
+    <p class="carnet">Carné: 0903-26-7778</p>
+
+    <span class="rol">Desarrollador de MatrixLab</span>
+
+    <div class="contribucion">
+        <h4>Contribución al proyecto</h4>
+        <p>
+           Se encargó de desarrollar la aplicación práctica del proyecto, 
+           relacionando el uso de matrices con el procesamiento de imágenes digitales y creando una demostración interactiva para observar sus efectos.
+</section>
+       
+
+    </main>
+
+<footer class="footer">
+
+    <div class="footer-superior">
+
+        <div class="footer-marca">
+            <img src="img/logo.webp"
+                 alt="Logo de la página"
+                 class="logo2">
+
+            <div>
+                <h2>Matrices</h2>
+                <p>Ingeniería en Sistemas</p>
+                
+            </div>
+        </div>
+
+      <div class="footer-integrantes">
+    <h3>Integrantes del proyecto</h3>
+    <p>Milhen Josué Fuentes Velásquez </p>
+    <p>Melissa Alexia Bautista Miranda</p>
+    <p>Francisco Javier González Velásquez</p>
+    <p>Pedro Andrés Navarro Merida </p>
+    <p>Diana Fernanda Barrios Ramirez</p>
+    <p>Janeth Darlyne Orozco de León    </p>
+</div>
+
+        <div class="footer-enlaces">
+            <h3>Explora la página</h3>
+            <a href="index.html" aria-current="page">Inicio</a>
+            <a href="teoria.html">Fundamentos</a>
+            <a href="operaciones.html">Operaciones</a>
+            <a href="ejemplos.html">Ejemplos</a>
+            <a href="aplicacion.html">Aplicación</a>
+            <a href="conclusiones.html">Conclusiones</a>
+        </div>
+
+    </div>
+
+    <div class="footer-frase">
+        <p>
+            Las Matemáticas detras de la Tecnología
+        </p>
+    </div>
+
+    <div class="footer-inferior">
+        <p>INGENIERÍA EN SISTEMAS · ÁLGEBRA LINEAL · 2026</p>
+    </div>
+
+</footer>
+
+<script>
+const base=[50,100,150,80,120,180,30,90,200];
+function draw(id,values){const el=document.getElementById(id);el.innerHTML='';values.forEach(v=>{const cell=document.createElement('div');cell.className='pixel';cell.style.backgroundColor=`rgb(${v},${v},${v})`;cell.style.color=v>135?'#111':'#fff';cell.textContent=v;el.appendChild(cell);});}
+function adjust(n){return base.map(v=>Math.max(0,Math.min(255,v+n)));}
+function update(){const n=Number(document.getElementById('brightness').value);const values=adjust(n);document.getElementById('amount').textContent=(n>0?'+':'')+n;draw('interactive',values);document.getElementById('resultText').textContent='[ '+values.slice(0,3).join(', ')+' ]\n[ '+values.slice(3,6).join(', ')+' ]\n[ '+values.slice(6,9).join(', ')+' ]';}
+draw('original',base);draw('before',base);draw('after',adjust(40));document.getElementById('brightness').addEventListener('input',update);document.getElementById('reset').addEventListener('click',()=>{document.getElementById('brightness').value=40;update();});update();
+</script>
+
+</body>
+</html>
